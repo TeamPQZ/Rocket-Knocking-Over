@@ -8,6 +8,7 @@ public class RocketMovement : MonoBehaviour {
 
     public int VertMod;
     public int HoriMod;
+    public int RotaMod;
 
     public Rigidbody rb;
 
@@ -24,7 +25,7 @@ public class RocketMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         rb.velocity = transform.forward * Speed * Time.deltaTime;
-        transform.Rotate(new Vector3(Input.GetAxis("Vertical") * VertMod, Input.GetAxis("Horizontal") * HoriMod, 0) * RotationSpeed * Time.deltaTime, Space.Self);
+        transform.Rotate(new Vector3(Input.GetAxis("Vertical") * VertMod, Input.GetAxis("Horizontal") * HoriMod, Input.GetAxis("Rotational")*RotaMod) * RotationSpeed * Time.deltaTime, Space.Self);
         Debug.Log(transform.rotation.eulerAngles.x);
 	}
 

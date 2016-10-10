@@ -42,7 +42,7 @@ public class MouseOrbitImproved : MonoBehaviour
         if (target == true)
         {
             //Tilføjet if mousepress, for at den ikke bevæger sig konstant.
-            if (Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetButton("MoveCameraMB"))
             {
                 x += Input.GetAxis("Mouse X") * xSpeed * distance * 0.02f;
                 y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
@@ -56,7 +56,7 @@ public class MouseOrbitImproved : MonoBehaviour
 
 
             Vector3 negDistance = new Vector3(0.0f, 0.0f, -distance);
-            Vector3 position = rotation * negDistance + target.position;
+            Vector3 position = rotation * negDistance + /*target.position*/ new Vector3(target.position.x,target.position.y,target.position.z+1);
 
             transform.rotation = rotation;
             transform.position = position;
