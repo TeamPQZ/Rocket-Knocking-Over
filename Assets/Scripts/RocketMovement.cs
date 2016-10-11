@@ -6,9 +6,9 @@ public class RocketMovement : MonoBehaviour {
     public float Speed;
     public float RotationSpeed;
 
-    public int VertMod;
-    public int HoriMod;
-    public int RotaMod;
+    public float VertMod;
+    public float HoriMod;
+    public float RotaMod;
 
     public Rigidbody rb;
 
